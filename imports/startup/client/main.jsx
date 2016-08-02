@@ -1,13 +1,19 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router'
 
 import './main.html';
 
-import App from '../../../imports/ui/App.jsx';
+import route from '../../../imports/ui/Rout.jsx';
+import login from '../../../imports/ui/AccountsUIWrapper.jsx';
 
 Meteor.startup(() => {
-  render(<App />, document.getElementById('render-target'));
+  render(
+    <Router history={browserHistory}>
+      <Route path='/'    component={route} />
+      <Route path='/login' component={login} />
+    </Router>, document.getElementById('render-target'));
 
   // loading Google Maps API
   GoogleMaps.load({

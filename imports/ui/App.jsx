@@ -55,7 +55,7 @@ class App extends Component {
                 <h1>hop-on-my-taxi</h1>
               </td>
               <td>
-                <AccountsUIWrapper />
+                <li><a href='#/login'>Sign in</a></li>
               </td>
             </tr>
           </tbody>
